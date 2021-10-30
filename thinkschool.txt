@@ -1,0 +1,139 @@
+#include <stdio.h>
+#include<string.h>
+void  main()
+{
+	char a[10];
+	int num;
+//	printf("enter the num\n");
+	scanf("%s",a);
+	char *single[]={"zero","one","two","three","four","five","six","seven","eight","nine"};
+	char *dobl[]={"ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","ninteen"};
+    char *dobty[]={"","","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninty"};
+//    char *thre[]={""}
+	int len=strlen(a);
+	if(len==1)
+	{
+	    num=a[0]-48;
+	    printf("%s",single[num]);
+	}
+	if(len==2 && a[0]-48==1)
+	{
+	    num=a[1]-48;
+	    printf("%s",dobl[num]);
+	}
+	else if(len==2 && a[1]-48==0)
+	{
+	    num=a[0]-48;
+	    printf("%s",dobty[num]);
+	}
+	else if(len==2)
+	{
+	    
+	    num=a[0]-48;
+	  int  num1=a[1]-48;
+	    printf("%s %s",dobty[num],single[num1]);
+	}
+	if(len==3 && a[1]-48==0 && a[2]-48==0)
+	{
+	    num=a[0]-48;
+	    printf("%s %s",single[num]," hundred");
+	}
+	else if(len==3 && a[1]-48==0)
+	{
+	    num=a[0]-48;
+	    int num1=a[2]-48;
+	    printf("%s %s %s",single[num]," hundred and ",single[num1]);
+	}
+	else if(len==3 && a[2]-48==0)
+	{
+	    num=a[0]-48;
+	    int num1=a[1]-48;
+	    printf("%s %s %s",single[num],"hundred and ",dobty[num1]);
+	}
+	else if(len==3)
+	{
+	    num=a[0]-48;
+	    int num1=a[1]-48;
+	    int num2=a[2]-48;
+	    printf("%s %s %s %s",single[num]," hundred and ",dobty[num1],single[num2]);
+	}
+	if(len==4 && a[1]-48==0 &&a[2]-48==0 && a[3]-48==0)
+	{
+	    num=a[0]-48;
+	    printf("%s %s",single[num]," thousand");
+	}
+	else if(len==4 && a[1]-48==0 && a[2]-48==0)
+	{
+	    num=a[0]-48;
+	    int num1=a[3]-48;
+	    printf("%s %s %s",single[num]," thousand ",single[num1]);
+	}
+	else if(len==4 && a[1]-48==0 && a[3]-48==0)
+	{
+	    num=a[0]-48;
+	    int num1=a[2]-48;
+	    printf("%s %s %s",single[num]," thousand ",dobty[num1]);
+	}
+	else if(len==4 && a[2]-48==0 && a[3]-48==0)
+	{
+	    num=a[0]-48;
+	    int num1=a[1]-48;
+	    printf("%s %s %s %s",single[num]," thousand ",single[num1]," hundred ");
+	}
+	else if(len==4 && a[2]-48==1)
+	{
+	    num=a[0]-48;
+	    int num1=a[1]-48;
+	    int num3=a[3]-48;
+	    printf("%s %s %s %s %s",single[num]," thousand ",single[num1]," hundred ",dobl[num3]);
+	}
+	else if(len==4)
+	{
+	    num=a[0]-48;
+	    int num1=a[1]-48;
+	    int num2=a[2]-48;
+	    int num3=a[3]-48;
+	    printf("%s %s %s %s %s %s",single[num]," thousand ",single[num1]," hundred and ",dobty[num2],single[num3]);
+	}
+	if(len==5 && a[1]-48==0 && a[2]-48==0&&a[3]-48==0&&a[4]-48==0)
+	{
+	    num =a[0]-48;
+	    if(num==1)
+	    printf("%s ","ten thousand ");
+	    else
+	    printf("%s %s",dobty[num]," thousand ");
+	}
+	else if(len==5&&a[0]-48==1&&a[2]-48==0&&a[3]-48==0&&a[4]-48==0)
+	{
+	    num=a[1]-48;
+	    printf("%s %s",dobl[num]," thousand ");
+	}
+	else if(len==5&&a[2]-48==0&&a[3]-48==0&&a[4]-48==0)
+	{
+	    num=a[0]-48;
+	    int num1=a[1]-48;
+	    printf("%s %s %s",dobty[num],single[num1]," thousand ");
+	}
+	else if(len==5&&a[0]-48==1&&a[3]-48==0&&a[4]-48==0)
+	{
+	    //num=a[0]-48;
+	    int num1=a[1]-48;
+	    int num2=a[2]-48;
+	    printf("%s %s %s %s",dobl[num1]," thousand ",single[num2]," hundred");
+	}
+	else if(len==5&&a[3]-48==0&&a[4]-48==0)
+	{
+	    num=a[0]-48;
+	    int num1=a[1]-48;
+	    printf("%s %s %s %s %s",dobty[num],single[num1]," thousand ",single[a[2]-48]," hundred ");
+	}
+	else if(len==5&&a[0]-48==1&&a[3]-48==1)
+	{
+	    num=a[1]-48;
+	    int num1=a[2]-48;
+	    int num2=a[4]-48;
+	    printf("%s %s %s %s %s",dobl[num]," thousand ",single[num1]," hundred and",dobl[num2]);
+	}
+}
+
+
